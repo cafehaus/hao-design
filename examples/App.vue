@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h2>haoUI组件示例</h2>
+    <h2>hao-design组件示例</h2>
     <HCity v-model="city" />
     <p>父组件：{{ city.cityName }}</p>
     <p @click="onChange">改变子组件里的值</p>

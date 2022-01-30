@@ -1,8 +1,8 @@
 {
-  "name": "haoui",
+  "name": "hao-design",
   "version": "0.1.0",
   "private": false,
-  "main": "dist/haoui.umd.min.js",
+  "main": "dist/hao-design.umd.min.js",
   "author": {
     "name": "cafehaus",
     "github":"https://cafehaus.github.io/"
