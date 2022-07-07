@@ -2,21 +2,22 @@
   "name": "hao-design",
   "version": "0.1.0",
   "private": false,
-  "main": "dist/hao-design.umd.min.js",
+  "main": "index.js",
   "author": {
     "name": "cafehaus",
-    "github":"https://cafehaus.github.io/"
+    "github": "https://cafehaus.github.io/"
   },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "lib":"vue-cli-service build --target lib src/index.js"
+    "lib": "vue-cli-service build --target lib src/index.js"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.2",
     "core-js": "^3.6.5",
     "v-click-outside": "^3.1.2",
+    "view-design": "^4.7.0",
     "vue": "^2.6.11"
   },
   "devDependencies": {

@@ -1,26 +1,10 @@
-import HPoptip from './components/h-poptip'
-import HCity from './components/h-city'
+import HModal from './components/h-modal'
+import HPager from './components/h-pager'
 
-const components = {
-    HPoptip,
-    HCity,
+export HModal
+export HPager
+
+export default {
+    HModal,
+    HPager,
 }
-
-const install = function(Vue) {
-    if (install.installed) return
-    Object.keys(components).forEach(key => {
-        Vue.component(key, components[key])
-    })
-}
-
-// auto install
-if (typeof window !== 'undefined' && window.Vue) {
-    install(window.Vue)
-}
-
-const API = {
-    install,
-    ...components
-}
-
-module.exports.default = module.exports = API

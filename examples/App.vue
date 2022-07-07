@@ -1,38 +1,33 @@
 <template>
   <div id="app">
     <h2>hao-design组件示例</h2>
-    <HCity v-model="city" />
-    <p>父组件：{{ city.cityName }}</p>
+    <HPager />
+    <HModal v-model="show">
+      dfdfsdaf
+    </HModal>
     <p @click="onChange">改变子组件里的值</p>
   </div>
 </template>
 
 <script>
-import HCity from '../src/components/h-city'
+import HModal from '../src/components/h-modal'
+import HPager from '../src/components/h-pager'
 
 export default {
   name: 'App',
   components: {
-    HCity
+    HModal,
+    HPager,
   },
   data() {
     return {
-      city: {}
+      show: false
     }
   },
 
   methods: {
     onChange() {
-      this.city = {
-        "cityId":"16",
-        "cityName":"延庆",
-        "provinceId":null,
-        "provinceName":null,
-        "initials":"Y",
-        "isHotCity":false,
-        "longitude":null,
-        "latitude":null
-      }
+      this.show = true
     }
   },
 }
@@ -46,6 +41,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 600px;
-  height: 3000px;
+  /* height: 3000px; */
 }
 </style>
