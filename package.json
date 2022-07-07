@@ -1,17 +1,19 @@
 {
   "name": "hao-design",
-  "version": "0.1.0",
+  "version": "0.1.2",
+  "description": "好运业务常用UI组件二次封装",
   "private": false,
-  "main": "index.js",
-  "author": {
-    "name": "cafehaus",
-    "github": "https://cafehaus.github.io/"
-  },
+  "main": "src/index.js",
+  "author": "cafehaus",
+  "keywords": [
+    "hao-design",
+    "iview",
+    "view-design"
+  ],
   "scripts": {
+    "dev": "yarn && yarn serve",
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "lib": "vue-cli-service build --target lib src/index.js"
+    "edit": "node edit.js"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.2",
@@ -43,7 +45,9 @@
     "parserOptions": {
       "parser": "babel-eslint"
     },
-    "rules": {}
+    "rules": {
+      "no-console":"off"
+    }
   },
   "browserslist": [
     "> 1%",

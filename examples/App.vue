@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    <h2>hao-design组件示例</h2>
+    <h2>hao-design 组件示例</h2>
     <HPager />
     <HModal v-model="show">
-      dfdfsdaf
+      我是示例弹窗组件里的内容
     </HModal>
-    <p @click="onChange">改变子组件里的值</p>
+    <span @click="onChange">{{ show ? '关闭' : '打开' }}弹窗</span>
   </div>
 </template>
 
@@ -41,6 +41,5 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 600px;
-  /* height: 3000px; */
 }
 </style>

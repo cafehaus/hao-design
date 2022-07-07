@@ -1,5 +1,5 @@
-# hao-design 好运业务UI组件库
-
+# hao-design 好运业务常用UI组件二次封装
+在 view-design 组件的基础上二次封装
 ### 安装组件库
 
 使用 npm:
@@ -7,18 +7,24 @@
 npm install hao-design --save
 ```
 
-使用 script 标签全局引用:
+### vue 组件里使用
 
-```html
-<script type="text/javascript" src="hao-design.umd.min.js"></script>
-<link rel="stylesheet" href="dist/hao-design.css">
+整体引入
+```js
+import HaoDesign form 'hao-design'
+export default {
+    components: {
+        HModal: HaoDesign.HModal
+    }
+}
 ```
 
-### 全局导入
-    import HaoDesign form 'hao-design'
-    import 'hao-design/dist/hao-design.css'
- 
-    Vue.use(HaoDesign)
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+单个引入
+```js
+import { HModal } form 'hao-design'
+export default {
+    components: {
+        HModal
+    }
+}
+```

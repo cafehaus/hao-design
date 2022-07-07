@@ -2,8 +2,12 @@
 examples/
 packages/
 public/
- 
+
 # 忽略指定文件
+edit.js
 vue.config.js
 babel.config.js
+package.json
+package-lock.json
+yarn.lock
 *.map

@@ -11,12 +11,10 @@
     :z-index="zIndex"
     :mask="mask"
     :lock-scroll="lockScroll"
-    :styles="styles"
     class="v-modal"
     :class-name="isCenter ? 'v-modal-center' : ''"
     @on-cancel="close"
   >
-    <a v-if="closable" class="iconfont icon-close" @click="close" />
     <slot name="header">
       <div class="v-header">{{ title }}</div>
     </slot>
@@ -119,10 +117,6 @@
         // 是否禁止对页面滚动条的修改
         type: Boolean,
         default: true,
-      },
-      styles: {
-        type: Object,
-        default: () => ({}),
       },
       maxHeight: {
         // 内容区可滚动 (支持px和vh)

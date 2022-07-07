@@ -11,6 +11,7 @@
       :show-total="showTotal"
       :show-elevator="showElevator"
       :show-sizer="showSizer"
+      :size="size"
       transfer
       :prev-text="size === 'small' ? '' : '上一页'"
       :next-text="size === 'small' ? '' : '下一页'"
@@ -23,7 +24,7 @@
 
 <script>
   export default {
-    name: 'VPager',
+    name: 'HPager',
     props: {
       page: {
         type: Object,
@@ -31,7 +32,6 @@
           return {
             index: 1,
             size: 10,
-            count: 1,
             total: 0,
           }
         },
@@ -111,32 +111,26 @@
 </script>
 
 <style lang="stylus" scoped>
->>>.ivu-page .ivu-page-item
-  border-radius 8px
-
->>>.ivu-page-item-active
-  background $main-color
-  a
-    font-weight bold
-    color $black
-
->>>.ivu-page-item-active:hover a
-  color $black
-
->>>.ivu-select-selection
-  border-radius 8px !important
-
->>>.ivu-page-custom-text
-  border 1px solid #dddee1
-  border-radius 8px
-  padding 0 6px
-
->>>.ivu-page-options-elevator input
-  border-radius 8px !important
-
 .m-pager
   display flex
   justify-content flex-end
+  >>>.ivu-page .ivu-page-item
+    border-radius 8px
+  >>>.ivu-page-item-active
+    background #FFD121
+    a
+      font-weight bold
+      color #161718
+  >>>.ivu-page-item-active:hover a
+    color #161718
+  >>>.ivu-select-selection
+    border-radius 8px !important
+  >>>.ivu-page-custom-text
+    border 1px solid #dddee1
+    border-radius 8px
+    padding 0 6px
+  >>>.ivu-page-options-elevator input
+    border-radius 8px !important
   .m-pager-btn
     display inline-block
     height 32px

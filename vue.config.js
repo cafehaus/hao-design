@@ -8,19 +8,6 @@ module.exports = {
       filename:'index.html'
     }
   },
-  css: {
-    loaderOptions: {
-      less: {
-        javascriptEnabled: true, // 开启 javascriptEnabled 支持写函数
-      },
-      stylus: {
-        import: ['~@/styles/main'], // 自动导入变量定义文件
-      },
-    },
-    extract: {
-      ignoreOrder: true, // 忽略加载顺序冲突
-    },
-  },
   // 扩展webpack配置,使webpages加入编译
   chainWebpack: config => {
     config.module
