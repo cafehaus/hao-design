@@ -28,3 +28,21 @@ export default {
     }
 }
 ```
+
+### HModal 弹窗
+依赖 iview 的 Modal 组件，支持所有属性设置
+
+### HPager 分页
+依赖 iview 的 page 组件，输入页面后可点击“确定”按钮切换，不用额外监听页码和页数变化
+
+### HCollapse 折叠面板
+有用到 iview 的 Icon 组件
+
+### HDownloadExcel 下载 excel 按钮
+依赖 iview 的 Button 组件
+
+### HPoptip 气泡提示
+支持放大缩小动画，项目中需安装 v-click-outside
+
+### HPreviewImg 查看图片
+有用到 iview 的 Carousel、CarouselItem 和 Icon 组件，支持传入单个路径、对象和数组，有值的时候会自动展示
