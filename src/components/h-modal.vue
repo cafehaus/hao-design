@@ -20,7 +20,7 @@
     </slot>
     <div class="v-body" :class="{ 'v-body-scroll': maxHeight }">
       <!-- 多套一层为了设置内容区max-height让滚动条到最右边，实际这样体验更佳 -->
-      <div class="v-body-inner" :style="{ 'max-height': maxHeight }" ref="vBodyScroll">
+      <div class="v-body-inner" :style="{ 'max-height': maxHeight }" ref="vBodyScroll" @[eventName]="handleEvent">
         <slot />
       </div>
     </div>
@@ -37,6 +37,8 @@
 </template>
 
 <script>
+  let vBodyScroll = null
+  let timestamp = null
   export default {
     name: 'HModal',
     props: {
@@ -133,20 +135,39 @@
         type: Boolean,
         default: false,
       },
+      eventName: { // 传值 scroll, 会监听内容区的 scroll 事件, 页面上的 Select\DatePicker 之类的下拉框加了 transfer, 滚动时不会自动收起导致错位, 直接用 iview 的 events-enabled 会有性能卡顿, 而且超出滚动区也不会隐藏
+        type: String,
+        default: ''
+      },
     },
 
     watch: {
       value(v) {
         if (v && this.maxHeight) {
+          if (this.eventName === 'scroll') timestamp = null
           // 设置了最大高度，重置滚动距离
           this.$nextTick(() => {
-            this.$refs.vBodyScroll && (this.$refs.vBodyScroll.scrollTop = 0)
+            vBodyScroll = this.$refs.vBodyScroll
+            vBodyScroll.scrollTop = 0
           })
         }
       },
     },
 
     methods: {
+      handleEvent() {
+        if (!this.eventName) return
+        if (this.eventName === 'scroll') {
+          // 简单节流一下
+          let curTimestamp = new Date().valueOf()
+          if (!timestamp || (curTimestamp - timestamp > 1000)) {
+            vBodyScroll.click()
+            timestamp = curTimestamp
+          }
+        } else {
+          this.$emit(this.eventName)
+        }
+      },
       ok() {
         this.$emit('on-ok')
       },
