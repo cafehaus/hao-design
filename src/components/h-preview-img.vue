@@ -1,10 +1,10 @@
 <template>
   <div v-if="img.length" class="h-preview-img">
     <Icon type="ios-close" color="#FFF" size="40" @click="close" />
-    <div class="h-preview-img-content">
+    <div class="h-preview-img-content" @click="handleMask">
       <Carousel v-model="active" loop :arrow="arrow" :dots="dots">
         <CarouselItem v-for="(m, idx) in imgList" :key="idx">
-          <img class="img" :src="m">
+          <img class="img" :src="m" @click.stop>
         </CarouselItem>
       </Carousel>
     </div>
@@ -26,6 +26,10 @@
       imgKey: { // 数组对象时图片路径的key
         type: String,
         default: '',
+      },
+      maskClosable: { // 是否允许点击遮罩层关闭，默认 false，注意如果是多张图轮播，因为要显示左右切换按钮，所以不支持点击蒙层关闭
+        type: Boolean,
+        default: false,
       },
     },
 
@@ -80,6 +84,12 @@
     },
 
     methods: {
+      handleMask() {
+        if (this.maskClosable && !this.isMulti) {
+          this.$emit('close')
+        }
+      },
+
       close() {
         this.$emit('close')
       },
