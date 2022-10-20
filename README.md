@@ -11,7 +11,7 @@ npm install hao-design --save
 
 整体引入
 ```js
-import HaoDesign form 'hao-design'
+import HaoDesign from 'hao-design'
 export default {
     components: {
         HModal: HaoDesign.HModal
@@ -21,7 +21,7 @@ export default {
 
 单个引入
 ```js
-import { HModal } form 'hao-design'
+import { HModal } from 'hao-design'
 export default {
     components: {
         HModal
