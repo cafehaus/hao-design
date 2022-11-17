@@ -46,3 +46,6 @@ export default {
 
 ### HPreviewImg 查看图片
 有用到 iview 的 Carousel、CarouselItem 和 Icon 组件，支持传入单个路径、对象和数组，有值的时候会自动展示
+
+### HRadioEnable 启用/禁用单选操作
+用 iview 的 Radio 组件异步不好控制，常用于 Table 表格里的数据启用/禁用操作
